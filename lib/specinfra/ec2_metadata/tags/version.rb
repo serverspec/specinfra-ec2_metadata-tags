@@ -1,6 +1,6 @@
 module Specinfra
-  module Ec2Metadata
-    module Tags
+  class Ec2Metadata
+    class Tags
       VERSION = "0.0.1"
     end
   end

@@ -5,7 +5,9 @@ module Specinfra
   class Ec2Metadata
     class Tags
       def self.get
-        ec2 = Aws::EC2::Client.new
+        region = host_inventory['ec2']['placement']['availability-zone']
+        region.gsub!(/[a-z]$/, '')
+        ec2 = Aws::EC2::Client.new(:region => region)
         page = ec2.describe_tags(
           :filters => [{
             :name   => 'resource-id',

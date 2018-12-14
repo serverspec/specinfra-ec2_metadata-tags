@@ -1,5 +1,5 @@
 require 'specinfra/ec2_metadata/tags/version'
-require 'aws-sdk'
+require 'aws-sdk-ec2'
 
 module Specinfra
   class Ec2Metadata
